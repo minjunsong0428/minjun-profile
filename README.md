@@ -1,23 +1,25 @@
-# Profile Site
+# 송민준 Profile
 
-모바일 카드형 자기소개 사이트입니다. `index.html`을 브라우저에서 열면 바로 실행됩니다.
+안녕하세요. 코딩, 디자인, AI, IT에 관심이 많은 송민준입니다.
 
-## 링크 바꾸기
+이 저장소는 저를 소개하고, 제가 사용하는 여러 연락 채널을 한곳에 모아두기 위해 만든 개인 프로필 사이트입니다. 카카오톡, 디스코드, 인스타그램, GitHub 링크를 통해 더 편하게 연결될 수 있도록 구성했습니다.
 
-`script.js` 맨 위의 `profile` 값만 실제 계정으로 바꾸면 됩니다.
+## About Me
 
-```js
-const profile = {
-  email: "your-email@example.com",
-  kakao: "https://open.kakao.com/o/your_kakao_openchat",
-  instagram: "https://instagram.com/your_instagram",
-  discord: "https://discord.com/users/your_discord_user_id",
-  github: "https://github.com/your_github",
-};
-```
+저는 작은 아이디어를 실제로 써볼 수 있는 결과물로 만드는 과정을 좋아합니다. 웹 화면을 만들고, 기능을 붙이고, 사람들이 편하게 사용할 수 있는 형태로 다듬는 일에 흥미가 있습니다.
 
-Discord 서버 초대 링크를 걸고 싶으면 `discord` 값을 `https://discord.gg/...` 형식으로 바꾸면 됩니다.
+특히 코딩과 디자인을 함께 생각하는 것을 좋아합니다. 단순히 작동하는 것에서 끝나는 것이 아니라, 보기 쉽고 누르기 편하며 사용하는 사람이 자연스럽게 이해할 수 있는 결과물을 만들고 싶습니다.
 
-## 대표 프로젝트
+## Interests
 
-`githubRepos` 배열에 GitHub 저장소 이름, 설명, 주소를 넣으면 카드가 자동으로 추가됩니다.
+- 코딩: 아이디어를 실제 기능과 웹사이트로 구현하는 것에 관심이 있습니다.
+- 디자인: 보기 좋고 사용하기 편한 화면을 만드는 과정에 관심이 있습니다.
+- AI: 공부, 제작, 자동화에 AI를 활용하는 방법을 탐구하고 있습니다.
+- 창작: 작은 생각을 콘텐츠나 프로젝트로 발전시키는 것을 좋아합니다.
+- IT: 새로운 기술과 디지털 서비스가 생활을 바꾸는 방식에 관심이 있습니다.
+
+## Contact
+
+문의나 소통은 디스코드, 인스타그램, 카카오톡을 가장 편하게 사용합니다.
+
+Thanks for visiting.
