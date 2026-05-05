@@ -1,40 +1,22 @@
 const profile = {
-  email: "your-email@example.com",
-  kakao: "https://open.kakao.com/o/your_kakao_openchat",
-  instagram: "https://instagram.com/your_instagram",
-  discord: "https://discord.com/users/your_discord_user_id",
-  github: "https://github.com/your_github",
-  githubRepos: [
-    {
-      name: "Portfolio Site",
-      description: "개인 소개와 소셜 링크를 모아둔 프로필 사이트",
-      url: "https://github.com/your_github/portfolio",
-    },
-    {
-      name: "Discord Project",
-      description: "커뮤니티 운영이나 봇 개발 프로젝트",
-      url: "https://github.com/your_github/discord-project",
-    },
-    {
-      name: "Web Playground",
-      description: "웹 UI와 자동화 실험을 기록하는 저장소",
-      url: "https://github.com/your_github/web-playground",
-    },
-  ],
+  email: "minjunsong0428@gmail.com",
+  emailLabel: "minjunsong0428@gmail.com",
+  kakao: "https://open.kakao.com/o/s9gKj73h",
+  instagram: "https://instagram.com/minjun._.song",
+  discord: "https://discord.com/app",
+  github: "https://github.com/minjunsong0428",
 };
 
 const links = {
   kakaoLink: profile.kakao,
   instagramLink: profile.instagram,
-  discordLink: profile.discord,
-  githubLink: profile.github,
   aboutDiscordLink: profile.discord,
   aboutInstagramLink: profile.instagram,
   aboutKakaoLink: profile.kakao,
   contactDiscordLink: profile.discord,
   contactInstagramLink: profile.instagram,
   contactKakaoLink: profile.kakao,
-  emailLink: `mailto:${profile.email}`,
+  emailLink: profile.email ? `mailto:${profile.email}` : "#contact",
 };
 
 Object.entries(links).forEach(([id, href]) => {
@@ -44,45 +26,56 @@ Object.entries(links).forEach(([id, href]) => {
   }
 });
 
-const projectList = document.getElementById("projectList");
+document.querySelectorAll("[data-panel]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const panel = document.getElementById(button.dataset.panel);
+    const willOpen = panel.hidden;
 
-profile.githubRepos.forEach((repo) => {
-  const card = document.createElement("a");
-  card.className = "project-card";
-  card.href = repo.url;
-  card.target = "_blank";
-  card.rel = "noreferrer";
-  card.innerHTML = `
-    <div>
-      <strong>${repo.name}</strong>
-      <p>${repo.description}</p>
-    </div>
-    <span>GitHub 보기</span>
-  `;
-  projectList.append(card);
+    document.querySelectorAll("[data-panel]").forEach((otherButton) => {
+      const otherPanel = document.getElementById(otherButton.dataset.panel);
+      if (otherPanel && otherPanel !== panel) {
+        otherPanel.hidden = true;
+        otherButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    panel.hidden = !willOpen;
+    button.setAttribute("aria-expanded", String(willOpen));
+  });
 });
 
-const contactForm = document.getElementById("contactForm");
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.top = "-999px";
+  document.body.append(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
 
-  const formData = new FormData(contactForm);
-  const senderName = formData.get("senderName");
-  const senderEmail = formData.get("senderEmail");
-  const subject = formData.get("subject");
-  const message = formData.get("message");
+document.querySelectorAll("[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const text = button.dataset.copy;
+    const box = button.closest(".link-panel, .open-tabs");
+    const status = box?.querySelector("[data-copy-status]");
 
-  const body = [
-    message,
-    "",
-    "-----",
-    `From: ${senderName}`,
-    `Reply to: ${senderEmail}`,
-  ].join("\n");
-
-  const mailto = new URL(`mailto:${profile.email}`);
-  mailto.searchParams.set("subject", subject);
-  mailto.searchParams.set("body", body);
-  window.location.href = mailto.toString();
+    try {
+      await copyText(text);
+      if (status) {
+        status.textContent = `${text} 복사됨`;
+      }
+    } catch (error) {
+      if (status) {
+        status.textContent = "복사에 실패했습니다. 텍스트를 직접 선택해주세요.";
+      }
+    }
+  });
 });

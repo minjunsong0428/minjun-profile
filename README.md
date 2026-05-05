@@ -22,4 +22,10 @@
 
 문의나 소통은 디스코드, 인스타그램, 카카오톡을 가장 편하게 사용합니다.
 
+- Discord: `minjun_song`, `iam_not_minjun_song`, `minjun._.song`
+- Instagram: `minjun._.song`
+- KakaoTalk: `open.kakao.com/o/s9gKj73h`
+- GitHub: `minjunsong0428`, `songminjun0428`
+- Email: `minjunsong0428@gmail.com`
+
 Thanks for visiting.

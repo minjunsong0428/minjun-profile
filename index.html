@@ -41,7 +41,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Hello, visitor</p>
           <h1 id="profile-title">안녕하세요!<br />반가워요</h1>
-          <p class="profile-name">송민준 · songminjun · minjun._.song</p>
+          <p class="profile-name">송민준</p>
           <p class="highlight">코딩, 디자인, AI를 좋아하는 학생입니다.</p>
           <p class="intro">
             웹 경험과 커뮤니티 도구에 관심이 많고, 작은 아이디어를 실제로 써볼 수
@@ -51,7 +51,7 @@
       </section>
 
       <section id="links" class="link-section" aria-label="소셜 링크">
-        <a id="kakaoLink" class="link-card kakao" href="#" target="_blank" rel="noreferrer">
+        <a id="kakaoLink" class="link-card kakao" href="https://open.kakao.com/o/s9gKj73h" target="_blank" rel="noreferrer">
           <span class="app-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" role="img">
               <path d="M32 13c-12.2 0-22 7.8-22 17.4 0 6.1 4 11.4 10 14.5l-2.1 7.1c-.2.7.6 1.2 1.2.8l8.4-5.2c1.5.2 3 .3 4.5.3 12.2 0 22-7.8 22-17.5S44.2 13 32 13Z" />
@@ -60,11 +60,11 @@
           </span>
           <span class="link-copy">
             <strong>카카오톡</strong>
-            <small>KakaoTalk</small>
+            <small>open.kakao.com/o/s9gKj73h</small>
           </span>
           <span class="arrow" aria-hidden="true">›</span>
         </a>
-        <a id="discordLink" class="link-card discord" href="#" target="_blank" rel="noreferrer">
+        <button id="discordLink" class="link-card discord" type="button" data-panel="discordChoicePanel" aria-expanded="false" aria-controls="discordChoicePanel">
           <span class="app-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" role="img">
               <path d="M46.8 20.6a35.9 35.9 0 0 0-9-2.8l-1.1 2.2a31 31 0 0 0-9.4 0l-1.1-2.2a35.9 35.9 0 0 0-9 2.8c-5.7 8.4-7.2 16.7-6.4 24.9a36.3 36.3 0 0 0 11.1 5.6l2.4-3.4a22.8 22.8 0 0 1-3.8-1.8l.9-.7c7 3.3 14.4 3.3 21.2 0l.9.7c-1.2.7-2.5 1.3-3.8 1.8l2.4 3.4a36.3 36.3 0 0 0 11.1-5.6c1-9.5-1.7-17.7-6.4-24.9Z" />
@@ -74,11 +74,26 @@
           </span>
           <span class="link-copy">
             <strong>디스코드</strong>
-            <small>Discord</small>
+            <small>minjun_song 외 2개</small>
           </span>
           <span class="arrow" aria-hidden="true">›</span>
-        </a>
-        <a id="instagramLink" class="link-card instagram" href="#" target="_blank" rel="noreferrer">
+        </button>
+        <div id="discordChoicePanel" class="link-panel compact-panel discord-panel" hidden>
+          <div class="panel-row">
+            <span>minjun_song</span>
+            <button type="button" data-copy="minjun_song">복사</button>
+          </div>
+          <div class="panel-row">
+            <span>iam_not_minjun_song</span>
+            <button type="button" data-copy="iam_not_minjun_song">복사</button>
+          </div>
+          <div class="panel-row">
+            <span>minjun._.song</span>
+            <button type="button" data-copy="minjun._.song">복사</button>
+          </div>
+          <p class="copy-status" data-copy-status aria-live="polite"></p>
+        </div>
+        <a id="instagramLink" class="link-card instagram" href="https://instagram.com/minjun._.song" target="_blank" rel="noreferrer">
           <span class="app-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" role="img">
               <rect x="17" y="17" width="30" height="30" rx="9" />
@@ -88,11 +103,11 @@
           </span>
           <span class="link-copy">
             <strong>인스타그램</strong>
-            <small>Instagram</small>
+            <small>minjun._.song</small>
           </span>
           <span class="arrow" aria-hidden="true">›</span>
         </a>
-        <a id="githubLink" class="link-card github" href="#" target="_blank" rel="noreferrer">
+        <button id="githubLink" class="link-card github" type="button" data-panel="githubChoicePanel" aria-expanded="false" aria-controls="githubChoicePanel">
           <span class="app-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" role="img">
               <path d="M32 12.8c-10.8 0-19.6 8.8-19.6 19.7 0 8.7 5.6 16 13.4 18.6 1 .2 1.3-.4 1.3-.9v-3.5c-5.4 1.2-6.6-2.3-6.6-2.3-.9-2.3-2.2-2.9-2.2-2.9-1.8-1.2.1-1.2.1-1.2 2 .1 3.1 2.1 3.1 2.1 1.8 3.1 4.8 2.2 5.9 1.7.2-1.3.7-2.2 1.3-2.7-4.3-.5-8.9-2.2-8.9-9.7 0-2.1.8-3.9 2.1-5.3-.2-.5-.9-2.6.2-5.3 0 0 1.7-.5 5.4 2.1 1.6-.4 3.2-.7 4.9-.7s3.3.2 4.9.7c3.7-2.6 5.4-2.1 5.4-2.1 1.1 2.7.4 4.8.2 5.3 1.3 1.4 2.1 3.1 2.1 5.3 0 7.5-4.6 9.2-8.9 9.7.7.6 1.4 1.9 1.4 3.8v5.6c0 .5.4 1.1 1.4.9 7.8-2.6 13.4-9.9 13.4-18.6 0-10.9-8.8-19.7-19.6-19.7Z" />
@@ -100,10 +115,33 @@
           </span>
           <span class="link-copy">
             <strong>깃허브</strong>
-            <small>GitHub</small>
+            <small>minjunsong0428 · songminjun0428</small>
           </span>
           <span class="arrow" aria-hidden="true">›</span>
-        </a>
+        </button>
+        <div id="githubChoicePanel" class="link-panel compact-panel github-panel" hidden>
+          <div class="panel-row github-row">
+            <span>
+              <strong>minjunsong0428</strong>
+              <small>github.com/minjunsong0428</small>
+            </span>
+            <div>
+              <a href="https://github.com/minjunsong0428" target="_blank" rel="noreferrer">열기</a>
+              <button type="button" data-copy="https://github.com/minjunsong0428">복사</button>
+            </div>
+          </div>
+          <div class="panel-row github-row">
+            <span>
+              <strong>songminjun0428</strong>
+              <small>github.com/songminjun0428</small>
+            </span>
+            <div>
+              <a href="https://github.com/songminjun0428" target="_blank" rel="noreferrer">열기</a>
+              <button type="button" data-copy="https://github.com/songminjun0428">복사</button>
+            </div>
+          </div>
+          <p class="copy-status" data-copy-status aria-live="polite"></p>
+        </div>
       </section>
 
       <section id="interests" class="soft-card" aria-labelledby="interests-title">
@@ -147,18 +185,10 @@
           <p>기술과 창의적인 아이디어로 더 나은 결과를 만드는 것을 좋아합니다. 문의는 디스코드, 인스타그램, 카카오톡이 가장 편합니다.</p>
         </div>
         <div class="about-actions">
-          <a id="aboutDiscordLink" href="#" target="_blank" rel="noreferrer">디스코드</a>
-          <a id="aboutInstagramLink" href="#" target="_blank" rel="noreferrer">인스타그램</a>
-          <a id="aboutKakaoLink" href="#" target="_blank" rel="noreferrer">카카오톡</a>
+          <a id="aboutDiscordLink" href="https://discord.com/app" target="_blank" rel="noreferrer">디스코드</a>
+          <a id="aboutInstagramLink" href="https://instagram.com/minjun._.song" target="_blank" rel="noreferrer">인스타그램</a>
+          <a id="aboutKakaoLink" href="https://open.kakao.com/o/s9gKj73h" target="_blank" rel="noreferrer">카카오톡</a>
         </div>
-      </section>
-
-      <section class="soft-card projects-card" aria-labelledby="projects-title">
-        <div class="section-title">
-          <span aria-hidden="true">GH</span>
-          <h2 id="projects-title">대표 프로젝트</h2>
-        </div>
-        <div id="projectList" class="project-list"></div>
       </section>
 
       <section id="contact" class="soft-card contact-card" aria-labelledby="contact-title">
@@ -166,31 +196,24 @@
           <span aria-hidden="true">?</span>
           <h2 id="contact-title">문의하기</h2>
         </div>
-        <div class="contact-preferred" aria-label="선호 문의 수단">
-          <a id="contactDiscordLink" href="#" target="_blank" rel="noreferrer">디스코드</a>
-          <a id="contactInstagramLink" href="#" target="_blank" rel="noreferrer">인스타그램</a>
-          <a id="contactKakaoLink" href="#" target="_blank" rel="noreferrer">카카오톡</a>
+        <div class="contact-list" aria-label="문의 링크">
+          <a id="contactDiscordLink" class="contact-method discord-method" href="https://discord.com/app" target="_blank" rel="noreferrer">
+            <strong>디스코드</strong>
+            <span>위 디스코드 카드에서 ID를 골라 복사해주세요.</span>
+          </a>
+          <a id="contactInstagramLink" class="contact-method instagram-method" href="https://instagram.com/minjun._.song" target="_blank" rel="noreferrer">
+            <strong>인스타그램</strong>
+            <span>minjun._.song</span>
+          </a>
+          <a id="contactKakaoLink" class="contact-method kakao-method" href="https://open.kakao.com/o/s9gKj73h" target="_blank" rel="noreferrer">
+            <strong>카카오톡</strong>
+            <span>open.kakao.com/o/s9gKj73h</span>
+          </a>
+          <a id="emailLink" class="contact-method email-method" href="mailto:minjunsong0428@gmail.com">
+            <strong>이메일</strong>
+            <span>minjunsong0428@gmail.com</span>
+          </a>
         </div>
-        <p class="mail-note">메일은 필요할 때만 보조로 사용합니다.</p>
-        <form id="contactForm" class="contact-form">
-          <label>
-            이름
-            <input id="senderName" name="senderName" type="text" autocomplete="name" required />
-          </label>
-          <label>
-            이메일
-            <input id="senderEmail" name="senderEmail" type="email" autocomplete="email" required />
-          </label>
-          <label>
-            제목
-            <input id="subject" name="subject" type="text" required />
-          </label>
-          <label>
-            내용
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </label>
-          <button type="submit">메일 앱 열기</button>
-        </form>
       </section>
 
       <footer class="footer-note">
