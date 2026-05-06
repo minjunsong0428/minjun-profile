@@ -1,10 +1,8 @@
 const profile = {
   email: "minjunsong0428@gmail.com",
-  emailLabel: "minjunsong0428@gmail.com",
   kakao: "https://open.kakao.com/o/s9gKj73h",
   instagram: "https://instagram.com/minjun._.song",
   discord: "https://discord.com/app",
-  github: "https://github.com/minjunsong0428",
 };
 
 const links = {
@@ -64,7 +62,7 @@ async function copyText(text) {
 document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", async () => {
     const text = button.dataset.copy;
-    const box = button.closest(".link-panel, .open-tabs");
+    const box = button.closest(".link-panel");
     const status = box?.querySelector("[data-copy-status]");
 
     try {
@@ -78,4 +76,52 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
       }
     }
   });
+});
+
+// Scroll Animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+  observer.observe(el);
+});
+
+// Scrollspy Navigation
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.tab-nav a');
+
+const scrollSpyOptions = {
+  root: null,
+  rootMargin: '-20% 0px -70% 0px',
+  threshold: 0
+};
+
+const scrollSpyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  });
+}, scrollSpyOptions);
+
+sections.forEach(section => {
+  scrollSpyObserver.observe(section);
 });
