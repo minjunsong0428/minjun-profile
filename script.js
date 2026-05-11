@@ -78,24 +78,54 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   });
 });
 
+const topCard = document.querySelector(".top-card");
+
+function updateHeaderState() {
+  if (topCard) {
+    topCard.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
 // Scroll Animations
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.15
-};
+document.documentElement.classList.add("motion-ready");
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-    }
+const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+function revealIfVisible(element) {
+  const rect = element.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.94) {
+    element.classList.add("is-visible");
+  }
+}
+
+if ("IntersectionObserver" in window) {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.15,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach((element, index) => {
+    element.style.setProperty("--reveal-delay", `${Math.min(index * 80, 240)}ms`);
+    revealIfVisible(element);
+    observer.observe(element);
   });
-}, observerOptions);
-
-document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-  observer.observe(el);
-});
+} else {
+  animatedElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
 
 // Scrollspy Navigation
 const sections = document.querySelectorAll('section[id]');
